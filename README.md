@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ### 新空间校园，开源商城（后台管理端VUE）
 
 + 基于开源项目NideShop重建，精简了一些功能的同时完善了一些功能，并重新设计了UI
@@ -107,3 +108,7 @@ npm run build:prod 或者 sudo npm run build:prod
 加我个人微信时，请先star。  
 <img width="500" src="https://raw.githubusercontent.com/iamdarcy/hiolabs/master/git-images/contact.jpg"/>
 
+=======
+# campus-link-admin-web
+校园小程序后台管理
+>>>>>>> e1864bae6e4f0bca12ea44a75fb024cbab252a3e
