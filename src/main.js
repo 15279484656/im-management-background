@@ -9,6 +9,7 @@ import locale from 'element-ui/lib/locale/lang/en' // lang i18n
 import VueAxios from 'vue-axios'
 import Axios from 'axios'
 import api from './config/api'
+import { globalMixin } from './globalMixin'; // 导入混入
 
 
 import '@/styles/index.scss' // global css
@@ -32,7 +33,7 @@ if (process.env.NODE_ENV === 'production') {
   const { mockXHR } = require('../mock')
   mockXHR()
 }
-
+Vue.mixin(globalMixin); // 全局混入
 // set ElementUI lang to EN
 Vue.use(ElementUI, { locale })
 // 如果想要中文版 element-ui，按如下方式声明

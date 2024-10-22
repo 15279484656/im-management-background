@@ -1,6 +1,6 @@
 module.exports = {
 
-  title: '新空间校园',
+  title: '战盟通讯后台',
 
   /**
    * @type {boolean} true | false

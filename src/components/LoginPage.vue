@@ -5,10 +5,10 @@
         <img src="static/images/loading.gif"/>
       </div>
       <div class="body">
-        <p class="tips">新空间校园</p>
+        <p class="tips">战盟通讯后台</p>
         <el-form ref="form" :model="form" :rules="rules" label-position="top">
-          <el-form-item label="" prop="username">
-            <el-input v-model="form.username" placeholder="用户名"></el-input>
+          <el-form-item label="" prop="userName">
+            <el-input v-model="form.userName" placeholder="用户名"></el-input>
           </el-form-item>
           <el-form-item label="" prop="password">
             <el-input
@@ -41,11 +41,11 @@ export default {
     return {
       root: "",
       form: {
-        username: "",
+        userName: "",
         password: "",
       },
       rules: {
-        username: [
+        userName: [
           {required: true, message: "请输入用户名", trigger: "blur"},
         ],
         password: [
@@ -66,9 +66,9 @@ export default {
         this.loading = true;
         let root = this.root;
         this.axios
-            .get(root + "/newspace/userInfo/login", {
+            .get(root + "/imchat/userInfo/login", {
               params: {
-                userName: this.form.username,
+                userName: this.form.userName,
                 password: this.form.password,
               }
             })
@@ -132,7 +132,7 @@ export default {
 <style>
 .login {
   align-items: center;
-  background: url("https://www.qile.club/img/back.jpg");
+  background: url("https://gd-hbimg.huaban.com/19fa5356ea7caae2256c4a0ca33d442bcc663dd25b5111-J2Z1ns_fw658webp");
   /* 以上为登录背景,可以自己更换成自己喜欢的 */
   background-size: 100%;
   background-repeat: no-repeat;

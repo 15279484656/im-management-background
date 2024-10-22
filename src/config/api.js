@@ -1,5 +1,5 @@
 const rootUrl = 'http://localhost:9528/api';
-// const rootUrl = 'https://meihua150.cn/newspace';
+// const rootUrl = 'http://39.107.53.15:8128';
 
 const api = {
     rootUrl : rootUrl,

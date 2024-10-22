@@ -23,158 +23,118 @@
         <el-submenu index="userManagement">
           <template slot="title">
             <i class="fa fa-users"></i>
-            <span>用户管理</span>
+            <span>用户与群组管理</span>
           </template>
           <el-menu-item index="/dashboard/userInfo">
             <i class="fa fa-userInfo"></i>
-            <span>用户列表</span>
+            <span>用户管理</span>
           </el-menu-item>
-          <el-menu-item index="/dashboard/student">
-            <i class="fa fa-graduation-cap"></i>
-            <span>学生管理</span>
+          <el-menu-item index="/dashboard/roomInfo">
+            <i class="fa fa-roomInfo"></i>
+            <span>群组管理</span>
           </el-menu-item>
-          <el-menu-item index="/dashboard/studentManual">
-            <i class="fa fa-book"></i>
-            <span>学生手册管理</span>
+          <el-menu-item index="/dashboard/userFriendRelationship">
+            <i class="fa fa-userFriendRelationship"></i>
+            <span>好友关系管理</span>
           </el-menu-item>
-          <el-menu-item index="/dashboard/agent">
-            <i class="fa fa-id-card"></i>
-            <span>代理商信息</span>
+          <el-menu-item index="/dashboard/userRoomInfo">
+            <i class="fa fa-userRoomInfo"></i>
+            <span>用户群组关系管理</span>
           </el-menu-item>
         </el-submenu>
-
-        <!-- 学校管理 -->
-        <el-submenu index="schoolManagement">
+        <!-- 聊天记录管理 -->
+        <el-submenu index="chatLogManager">
           <template slot="title">
-            <i class="fa fa-university"></i>
-            <span>学校管理</span>
+            <i class="fa fa-chatlog"></i>
+            <span>聊天记录管理</span>
           </template>
-          <el-menu-item index="/dashboard/school">
-            <i class="fa fa-school"></i>
-            <span>学校列表</span>
+          <el-menu-item index="/dashboard/singleChatLog">
+            <i class="fa fa-singleChatLog"></i>
+            <span>单聊聊天记录</span>
           </el-menu-item>
-          <el-menu-item index="/dashboard/departmentInfo">
-            <i class="fa fa-building"></i>
-            <span>院系信息管理</span>
-          </el-menu-item>
-          <el-menu-item index="/dashboard/schoolNews">
-            <i class="fa fa-newspaper"></i>
-            <span>校园资讯</span>
+          <el-menu-item index="/dashboard/roomChatLog">
+            <i class="fa fa-roomChatLog"></i>
+            <span>群聊聊天记录</span>
           </el-menu-item>
         </el-submenu>
 
-        <!-- 社群管理 -->
-        <el-submenu index="communityManagement">
-          <template slot="title">
-            <i class="fa fa-users"></i>
-            <span>社群管理</span>
-          </template>
-          <el-menu-item index="/dashboard/communityInfo">
-            <i class="fa fa-info-circle"></i>
-            <span>社群信息</span>
-          </el-menu-item>
-          <el-menu-item index="/dashboard/activity">
-            <i class="fa fa-calendar-alt"></i>
-            <span>社群活动</span>
-          </el-menu-item>
-        </el-submenu>
-
-        <!-- 任务与提醒 -->
-        <el-submenu index="tasksReminders">
-          <template slot="title">
-            <i class="fa fa-tasks"></i>
-            <span>代办与私信</span>
-          </template>
-          <el-menu-item index="/dashboard/todo">
-            <i class="fa fa-tasks"></i>
-            <span>代办管理</span>
-          </el-menu-item>
-          <el-menu-item index="/dashboard/stationMessage">
-            <i class="fa fa-envelope"></i>
-            <span>站内信管理</span>
-          </el-menu-item>
-        </el-submenu>
-
-        <!-- 内容管理 -->
-        <el-submenu index="contentManagement">
-          <template slot="title">
-            <i class="fa fa-file-alt"></i>
-            <span>内容管理</span>
-          </template>
-          <el-menu-item index="/dashboard/adRotation">
-            <i class="fa fa-images"></i>
-            <span>广告轮播图</span>
-          </el-menu-item>
-          <el-menu-item index="/dashboard/confessionWall">
-            <i class="fa fa-heart"></i>
-            <span>表白墙管理</span>
-          </el-menu-item>
-          <el-menu-item index="/dashboard/regionInfo">
-            <i class="fa fa-region"></i>
-            <span>地域信息管理</span>
-          </el-menu-item>
-        </el-submenu>
-
-        <!-- 订单与支付管理 -->
-        <el-submenu index="orderPaymentManagement">
+        <!-- 敏感词管理模块 -->
+        <el-submenu index="sensitiveManagement">
           <template slot="title">
             <i class="fa fa-shopping-cart"></i>
-            <span>订单与支付管理</span>
+            <span>敏感词管理</span>
           </template>
-          <el-menu-item index="/dashboard/order">
-            <i class="fa fa-list"></i>
-            <span>订单列表</span>
-          </el-menu-item>
-          <el-menu-item index="/dashboard/orderChat">
-            <i class="fa fa-comments"></i>
-            <span>订单聊天管理</span>
-          </el-menu-item>
-          <el-menu-item index="/dashboard/purseInfo">
-            <i class="fa fa-purse"></i>
-            <span>钱包管理</span>
-          </el-menu-item>
-          <el-menu-item index="/dashboard/consumptionBill">
-            <i class="fa fa-receipt"></i>
-            <span>消费管理</span>
+          <el-menu-item index="/dashboard/sensitiveWords">
+            <i class="fa fa-sensitiveWords"></i>
+            <span>敏感词管理</span>
           </el-menu-item>
         </el-submenu>
 
-        <!-- 反馈与支持 -->
-        <el-submenu index="feedbackSupport">
+        <!-- 充值管理 -->
+        <el-submenu index="chargeManager">
           <template slot="title">
             <i class="fa fa-comments"></i>
-            <span>反馈与支持</span>
+            <span>充值管理</span>
           </template>
-          <el-menu-item index="/dashboard/feedBack">
-            <i class="fa fa-comment-dots"></i>
-            <span>意见反馈管理</span>
+          <el-menu-item index="/dashboard/rechargeInfo">
+            <i class="fa fa-rechargeInfo"></i>
+            <span>充值管理</span>
           </el-menu-item>
-          <el-menu-item index="/dashboard/questionInfo">
-            <i class="fa fa-question-circle"></i>
-            <span>问题管理</span>
-          </el-menu-item>
-          <el-menu-item index="/dashboard/answerInfo">
-            <i class="fa fa-check-circle"></i>
-            <span>答案管理</span>
+          <el-menu-item index="/dashboard/currencyInfo">
+            <i class="fa fa-currencyInfo"></i>
+            <span>货币管理</span>
           </el-menu-item>
         </el-submenu>
-        <!-- 店铺设置 -->
-        <el-submenu index="shopSettings">
+
+        <!-- 系统日志模块 -->
+        <el-submenu index="sysLog">
+          <template slot="title">
+            <i class="fa fa-file-alt"></i>
+            <span>系统日志管理</span>
+          </template>
+          <el-menu-item index="/dashboard/loginLog">
+            <i class="fa fa-loginLog"></i>
+            <span>登录日志管理</span>
+          </el-menu-item>
+          <el-menu-item index="/dashboard/mailInfo">
+            <i class="fa fa-mailInfo"></i>
+            <span>站内信日志管理</span>
+          </el-menu-item>
+        </el-submenu>
+        <!-- 系统配置管理 -->
+        <el-submenu index="sysConfigManager">
           <template slot="title">
             <i class="fa fa-cogs"></i>
-            <span>设置</span>
+            <span>系统配置管理</span>
           </template>
-          <el-menu-item index="/dashboard/settings/showset">
-            <i class="fa fa-eye"></i>
-            <span>显示设置</span>
+          <el-menu-item index="/dashboard/configInfo">
+            <i class="fa fa-configInfo"></i>
+            <span>系统配置管理</span>
           </el-menu-item>
-          <el-menu-item index="/dashboard/admin">
-            <i class="fa fa-user-shield"></i>
-            <span>管理员</span>
+          <el-menu-item index="/dashboard/websiteInfo">
+            <i class="fa fa-sys-websiteInfo"></i>
+            <span>网站站点管理</span>
           </el-menu-item>
         </el-submenu>
-        <!--        </el-menu>-->
-
+        <!-- 其他模块管理-->
+        <el-submenu index="sysConfigManager">
+          <template slot="title">
+            <i class="fa fa-cogs"></i>
+            <span>其他模块管理</span>
+          </template>
+          <el-menu-item index="/dashboard/upload">
+            <i class="fa fa-upload"></i>
+            <span>上传管理</span>
+          </el-menu-item>
+          <el-menu-item index="/dashboard/customizeUserImg">
+            <i class="fa fa-customizeUserImg"></i>
+            <span>表情管理</span>
+          </el-menu-item>
+          <el-menu-item index="/dashboard/languageInfo">
+            <i class="fa fa-languageInfo"></i>
+            <span>语言管理</span>
+          </el-menu-item>
+        </el-submenu>
         <el-menu-item @click="logout">
           <i class="fa fa-large fa-sign-out"></i>
           <span>退出</span>

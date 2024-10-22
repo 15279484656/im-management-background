@@ -39,7 +39,8 @@ module.exports = {
         // 配置代理
         proxy: {
             '/api': {
-                target: 'https://meihua150.cn',
+                // target: 'https://meihua150.cn',
+                target: 'http://39.107.53.15:8128',
                 changeOrigin: true,
                 pathRewrite: {'^/api': ''},
             },

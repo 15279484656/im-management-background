@@ -15,227 +15,6 @@ export const constantRoutes = [
         component: () => import("@/components/WelcomePage"),
       },
       {
-        path: "goods",
-        name: "goods",
-        component: () => import("@/components/Goods/GoodsPage"),
-      },
-      {
-        path: "goods/add",
-        name: "goods_add",
-        component: () => import("@/components/Goods/GoodsAddPage"),
-      },
-      {
-        path: "nature",
-        name: "nature",
-        component: () => import("@/components/Nature/NaturePage"),
-      },
-      {
-        path: "specification/detail",
-        name: "specification_detail",
-        component: () =>
-          import("@/components/Specification/SpecificationAddPage"),
-      },
-      {
-        path: "order",
-        name: "order",
-        component: () => import("@/components/Order/OrderPage"),
-      },
-      {
-        path: "order/detail",
-        name: "order_detail",
-        component: () => import("@/components/Order/OrderDetailPage"),
-      },
-      {
-        path: "school",
-        name: "school",
-        component: () => import("@/components/School/School"),
-      },
-      {
-        path: "school/add",  // 新增学校页面路径
-        name: "school_add",
-        component: () => import("@/components/School/SchoolAdd"),  // 确保 SchoolAdd.vue 文件在正确的目录下
-      },
-      {
-        path: "agent",
-        name: "agent",
-        component: () => import("@/components/Agent/Agent"),
-      },
-      {
-        path: "agent/add",  // 新增学校页面路径
-        name: "agent_add",
-        component: () => import("@/components/Agent/AgentAdd"),  // 确保 SchoolAdd.vue 文件在正确的目录下
-      },
-      {
-        path: "activity",
-        name: "activity",
-        component: () => import("@/components/Activity/Activity"),
-      },
-      {
-        path: "activity/add",  // 新增学校页面路径
-        name: "activity_add",
-        component: () => import("@/components/Activity/ActivityAdd"),  // 确保 SchoolAdd.vue 文件在正确的目录下
-      },
-      {
-        path: "communityInfo",
-        name: "community_info",
-        component: () => import("@/components/CommunityInfo/CommunityInfo"),
-      },
-      {
-        path: "communityInfo/add",  // 新增学校页面路径
-        name: "community_info_add",
-        component: () => import("@/components/CommunityInfo/CommunityInfoAdd"),  // 确保 SchoolAdd.vue 文件在正确的目录下
-      },
-      {
-        path: "todo",
-        name: "todo",
-        component: () => import("@/components/Todo/Todo"),
-      },
-      {
-        path: "todo/add",  // 新增学校页面路径
-        name: "todo_add",
-        component: () => import("@/components/Todo/TodoAdd"),  // 确保 SchoolAdd.vue 文件在正确的目录下
-      },
-      {
-        path: "student",
-        name: "student",
-        component: () => import("@/components/Student/Student"),
-      },
-      {
-        path: "student/add",
-        name: "student_add",
-        component: () => import("@/components/Student/StudentAdd"),
-      },
-      {
-        path: "studentManual",
-        name: "student_manual",
-        component: () => import("@/components/StudentManual/StudentManual"),
-      },
-      {
-        path: "studentManual/add",
-        name: "student_manual_add",
-        component: () => import("@/components/StudentManual/StudentManualAdd"),
-      },
-      {
-        path: "adRotation",
-        name: "ad_rotation",
-        component: () => import("@/components/AdRotation/AdRotation"),
-      },
-      {
-        path: "adRotation/add",
-        name: "ad_rotation_add",
-        component: () => import("@/components/AdRotation/AdRotationAdd"),
-      },
-      {
-        path: "feedBack",
-        name: "feed_back",
-        component: () => import("@/components/FeedBack/FeedBack"),
-      },
-      {
-        path: "feedBack/add",
-        name: "feed_back_add",
-        component: () => import("@/components/FeedBack/FeedBackAdd"),
-      },
-      {
-        path: "schoolNews",
-        name: "school_news",
-        component: () => import("@/components/SchoolNews/SchoolNews"),
-      },
-      {
-        path: "schoolNews/add",
-        name: "school_news_add",
-        component: () => import("@/components/SchoolNews/SchoolNewsAdd"),
-      },
-      {
-        path: "consumptionBill",
-        name: "consumption_bill",
-        component: () => import("@/components/ConsumptionBill/ConsumptionBill"),
-      },
-      {
-        path: "consumptionBill/add",
-        name: "consumption_bill_add",
-        component: () => import("@/components/ConsumptionBill/ConsumptionBillAdd"),
-      },
-      {
-        path: "stationMessage",
-        name: "station_message",
-        component: () => import("@/components/StationMessage/StationMessage"),
-      },
-      {
-        path: "stationMessage/add",
-        name: "station_message_add",
-        component: () => import("@/components/StationMessage/StationMessageAdd"),
-      },
-      {
-        path: "answerInfo",
-        name: "answer_info",
-        component: () => import("@/components/AnswerInfo/AnswerInfo"),
-      },
-      {
-        path: "answerInfo/add",
-        name: "answer_info_add",
-        component: () => import("@/components/AnswerInfo/AnswerInfoAdd"),
-      },
-      {
-        path: "confessionWall",
-        name: "confession_wall",
-        component: () => import("@/components/ConfessionWall/ConfessionWall"),
-      },
-      {
-        path: "confessionWall/add",
-        name: "confession_wall_add",
-        component: () => import("@/components/ConfessionWall/ConfessionWallAdd"),
-      },
-      {
-        path: "regionInfo",
-        name: "region_info",
-        component: () => import("@/components/RegionInfo/RegionInfo"),
-      },
-      {
-        path: "regionInfo/add",
-        name: "region_info_add",
-        component: () => import("@/components/RegionInfo/RegionInfoAdd"),
-      },
-      {
-        path: "orderChat",
-        name: "order_chat",
-        component: () => import("@/components/OrderChat/OrderChat"),
-      },
-      {
-        path: "orderChat/add",
-        name: "order_chat_add",
-        component: () => import("@/components/OrderChat/OrderChatAdd"),
-      },
-      {
-        path: "purseInfo",
-        name: "purse_info",
-        component: () => import("@/components/PurseInfo/PurseInfo"),
-      },
-      {
-        path: "purseInfo/add",
-        name: "purse_info_add",
-        component: () => import("@/components/PurseInfo/PurseInfoAdd"),
-      },
-      {
-        path: "questionInfo",
-        name: "question_info",
-        component: () => import("@/components/QuestionInfo/QuestionInfo"),
-      },
-      {
-        path: "questionInfo/add",
-        name: "question_info_add",
-        component: () => import("@/components/QuestionInfo/QuestionInfoAdd"),
-      },
-      {
-        path: "departmentInfo",
-        name: "department_info",
-        component: () => import("@/components/DepartmentInfo/DepartmentInfo"),
-      },
-      {
-        path: "departmentInfo/add",
-        name: "department_info_add",
-        component: () => import("@/components/DepartmentInfo/DepartmentInfoAdd"),
-      },
-      {
         path: "userInfo",
         name: "user_info",
         component: () => import("@/components/UserInfo/UserInfo"),
@@ -246,15 +25,161 @@ export const constantRoutes = [
         component: () => import("@/components/UserInfo/UserInfoAdd"),
       },
       {
-        path: "keywords",
-        name: "keywords",
-        component: () => import("@/components/Keywords/KeywordsPage"),
+        path: "roomInfo",
+        name: "room_info",
+        component: () => import("@/components/RoomInfo/RoomInfo"),
       },
       {
-        path: "keywords/add",
-        name: "keywords_add",
-        component: () => import("@/components/Keywords/KeywordsAddPage"),
+        path: "roomInfo/add",
+        name: "room_info_add",
+        component: () => import("@/components/RoomInfo/RoomInfoAdd"),
       },
+      {
+        path: "userFriendRelationship",
+        name: "user_friend_relationship",
+        component: () => import("@/components/UserFriendRelationship/UserFriendRelationship"),
+      },
+      {
+        path: "userFriendRelationship/add",
+        name: "user_friend_relationship_add",
+        component: () => import("@/components/UserFriendRelationship/UserFriendRelationshipAdd"),
+      },
+      {
+        path: "userRoomInfo",
+        name: "user_room_info",
+        component: () => import("@/components/UserRoomInfo/UserRoomInfo"),
+      },
+      {
+        path: "userRoomInfo/add",
+        name: "user_room_info_add",
+        component: () => import("@/components/UserRoomInfo/UserRoomInfoAdd"),
+      },
+      {
+        path: "singleChatLog",
+        name: "single_chat_log",
+        component: () => import("@/components/SingleChatLog/SingleChatLog"),
+      },
+      {
+        path: "singleChatLog/add",
+        name: "single_chat_log_add",
+        component: () => import("@/components/SingleChatLog/SingleChatLogAdd"),
+      },
+      {
+        path: "roomChatLog",
+        name: "room_chat_log",
+        component: () => import("@/components/RoomChatLog/RoomChatLog"),
+      },
+      {
+        path: "roomChatLog/add",
+        name: "room_chat_log_add",
+        component: () => import("@/components/RoomChatLog/RoomChatLogAdd"),
+      },
+      {
+        path: "loginLog",
+        name: "login_log",
+        component: () => import("@/components/LoginLog/LoginLog"),
+      },
+      {
+        path: "loginLog/add",
+        name: "login_log_add",
+        component: () => import("@/components/LoginLog/LoginLogAdd"),
+      },
+      {
+        path: "mailInfo",
+        name: "mail_info",
+        component: () => import("@/components/MailInfo/MailInfo"),
+      },
+      {
+        path: "mailInfo/add",
+        name: "mail_info_add",
+        component: () => import("@/components/MailInfo/MailInfoAdd"),
+      },
+      {
+        path: "sensitiveWords",
+        name: "sensitive_words",
+        component: () => import("@/components/SensitiveWords/SensitiveWords"),
+      },
+      {
+        path: "sensitiveWords/add",
+        name: "sensitive_words_add",
+        component: () => import("@/components/SensitiveWords/SensitiveWordsAdd"),
+      },
+      {
+        path: "rechargeInfo",
+        name: "recharge_info",
+        component: () => import("@/components/RechargeInfo/RechargeInfo"),
+      },
+      {
+        path: "rechargeInfo/add",
+        name: "recharge_info_add",
+        component: () => import("@/components/RechargeInfo/RechargeInfoAdd"),
+      },
+      {
+        path: "currencyInfo",
+        name: "currency_info",
+        component: () => import("@/components/CurrencyInfo/CurrencyInfo"),
+      },
+      {
+        path: "currencyInfo/add",
+        name: "currency_info_add",
+        component: () => import("@/components/CurrencyInfo/CurrencyInfoAdd"),
+      },
+      {
+        path: "configInfo",
+        name: "config_info",
+        component: () => import("@/components/ConfigInfo/ConfigInfo"),
+      },
+      {
+        path: "configInfo/add",
+        name: "config_info_add",
+        component: () => import("@/components/ConfigInfo/ConfigInfoAdd"),
+      },
+
+      {
+        path: "websiteInfo",
+        name: "website_info",
+        component: () => import("@/components/WebsiteInfo/WebsiteInfo"),
+      },
+      {
+        path: "websiteInfo/add",
+        name: "website_info_add",
+        component: () => import("@/components/WebsiteInfo/WebsiteInfoAdd"),
+      },
+
+      {
+        path: "upload",
+        name: "upload",
+        component: () => import("@/components/Upload/Upload"),
+      },
+      {
+        path: "upload/add",
+        name: "upload_add",
+        component: () => import("@/components/Upload/UploadAdd"),
+      },
+
+      {
+        path: "customizeUserImg",
+        name: "customize_user_img",
+        component: () => import("@/components/CustomizeUserImg/CustomizeUserImg"),
+      },
+      {
+        path: "customizeUserImg/add",
+        name: "customize_user_img_add",
+        component: () => import("@/components/CustomizeUserImg/CustomizeUserImgAdd"),
+      },
+
+
+      {
+        path: "languageInfo",
+        name: "language_info",
+        component: () => import("@/components/LanguageInfo/LanguageInfo"),
+      },
+      {
+        path: "languageInfo/add",
+        name: "language_info_add",
+        component: () => import("@/components/LanguageInfo/LanguageInfoAdd"),
+      },
+
       {
         path: "admin",
         name: "admin",

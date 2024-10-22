@@ -14,20 +14,14 @@
         <el-form-item label="昵称" prop="nickName">
           <el-input v-model="form.nickName" placeholder="请输入昵称"></el-input>
         </el-form-item>
-        <el-form-item label="OpenID" prop="openId">
-          <el-input v-model="form.openId" placeholder="请输入OpenID"></el-input>
-        </el-form-item>
-<!--        <el-form-item label="密码" prop="password">-->
-<!--          <el-input v-model="form.password" type="password" placeholder="请输入密码"></el-input>-->
-<!--        </el-form-item>-->
         <el-form-item label="邮件" prop="email">
           <el-input v-model="form.email" placeholder="请输入邮件"></el-input>
         </el-form-item>
         <el-form-item label="电话号码" prop="phoneNum">
           <el-input v-model="form.phoneNum" placeholder="请输入电话号码"></el-input>
         </el-form-item>
-        <el-form-item label="头像" prop="userPicture">
-          <el-input v-model="form.userPicture" placeholder="请输入头像链接"></el-input>
+        <el-form-item label="头像" prop="picture">
+          <el-input v-model="form.picture" placeholder="请输入头像链接"></el-input>
         </el-form-item>
         <el-form-item label="性别" prop="sex">
           <el-radio-group v-model="form.sex">
@@ -37,9 +31,6 @@
         </el-form-item>
         <el-form-item label="身份证号" prop="idCard">
           <el-input v-model="form.idCard" placeholder="请输入身份证号"></el-input>
-        </el-form-item>
-        <el-form-item label="角色" prop="role">
-          <el-input v-model="form.role" placeholder="请输入角色"></el-input>
         </el-form-item>
         <el-form-item>
           <el-button type="primary" @click="onSubmit">{{ isEdit ? '保存修改' : '提交' }}</el-button>
@@ -62,10 +53,9 @@ export default {
         salt: '',
         email: '',
         phoneNum: '',
-        userPicture: '',
+        picture: '',
         sex: '1',
-        idCard: '',
-        role: ''
+        idCard: ''
       },
       isEdit: false,
       rules: {
@@ -80,7 +70,7 @@ export default {
   },
   methods: {
     fetchUserData(id) {
-      this.axios.get('/newspace/userInfo/getById', {
+      this.axios.get('/imchat/userInfo/getById', {
         params: { id }
       }).then(response => {
         if (response.data.success) {
@@ -97,7 +87,7 @@ export default {
         if (valid) {
           if (this.isEdit) {
             const { createTime, updateTime, ...formDataToSend } = this.form;
-            this.axios.put('/newspace/userInfo', formDataToSend)
+            this.axios.put('/imchat/userInfo', formDataToSend)
                 .then(response => {
                   if (response.data.success) {
                     this.$message.success('用户信息更新成功');
@@ -109,7 +99,7 @@ export default {
               this.$message.error('更新失败，请检查网络或联系管理员。');
             });
           } else {
-            this.axios.post('/newspace/userInfo', this.form)
+            this.axios.post('/imchat/userInfo', this.form)
                 .then(response => {
                   if (response.data.success) {
                     this.$message.success('用户添加成功');
