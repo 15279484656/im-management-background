@@ -31,18 +31,13 @@ module.exports = {
     productionSourceMap: false,
     devServer: {
         port: 9528,
-        // open: true,
-        // overlay: {
-        //     warnings: false,
-        //     errors: true,
-        // },
         // 配置代理
         proxy: {
-            '/api': {
+            '/imchat': {
                 // target: 'https://meihua150.cn',
-                target: 'http://39.107.53.15:8128',
+                target: 'https://www.zhanmeng.net',
                 changeOrigin: true,
-                pathRewrite: {'^/api': ''},
+                pathRewrite: {'^/imchat': ''},
             },
         },
     },

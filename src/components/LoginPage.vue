@@ -50,7 +50,7 @@ export default {
         ],
         password: [
           {required: true, message: "请输入密码", trigger: "blur"},
-          {min: 6, message: "密码不得低于6个字符", trigger: "blur"},
+          {min: 3, message: "密码不得低于3个字符", trigger: "blur"},
         ],
       },
       loading: false,
