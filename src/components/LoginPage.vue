@@ -2,10 +2,10 @@
   <div class="login">
     <div class="login-box">
       <div class="logo">
-        <img src="static/images/loading.gif"/>
+        <img src="static/images/logo.jpg"/>
       </div>
       <div class="body">
-        <p class="tips">战盟通讯后台</p>
+        <p class="tips">官方工作人员入口</p>
         <el-form ref="form" :model="form" :rules="rules" label-position="top">
           <el-form-item label="" prop="userName">
             <el-input v-model="form.userName" placeholder="用户名"></el-input>
@@ -74,7 +74,7 @@ export default {
             })
             .then((res) => {
               let call = res.data;
-              console.log("res.data:",call);
+              console.log("res.data:", call);
               this.loading = false;
               if (res.data.code === 200) {
                 console.log(res.data.result);
@@ -130,10 +130,10 @@ export default {
 };
 </script>
 <style>
-.login {
+.login{
   align-items: center;
-  background: url("https://gd-hbimg.huaban.com/19fa5356ea7caae2256c4a0ca33d442bcc663dd25b5111-J2Z1ns_fw658webp");
-  /* 以上为登录背景,可以自己更换成自己喜欢的 */
+  /*background: url("https://gd-hbimg.huaban.com/19fa5356ea7caae2256c4a0ca33d442bcc663dd25b5111-J2Z1ns_fw658webp");*/
+  background: url("https://project2024-1304457300.cos.ap-guangzhou.myqcloud.com/taikong.jpg");
   background-size: 100%;
   background-repeat: no-repeat;
   display: flex;
@@ -147,17 +147,18 @@ export default {
 
 .login-box {
   width: 320px;
-  background: #fff;
+  background: rgba(32, 160, 255, 0.58);
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
   border-radius: 10px;
   box-shadow: 2px 2px 12px #ccc;
+  margin-top: 180px; /* 调整该值控制整体向下移动的距离 */
 }
 
 .login-box .logo {
   height: 100px;
   padding-top: 30px;
-  /*background: #324157;*/
+  background: rgba(32, 160, 255, 0.58);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -170,10 +171,12 @@ export default {
 
 .login-box .body {
   padding: 10px 30px 30px 30px;
+  color: #fafafa;
+  background: rgba(32, 160, 255, 0.58);
 }
 
 .login-box .body .tips {
-  font-size: 14px;
+  font-size: 26px;
   height: 40px;
   line-height: 40px;
   text-align: center;

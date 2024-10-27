@@ -1,45 +1,56 @@
 <template>
-  <div class="content-page">
-    <div class="content-nav">
-      <el-breadcrumb class="breadcrumb" separator="/">
-        <el-breadcrumb-item>敏感词管理</el-breadcrumb-item>
-      </el-breadcrumb>
+  <BackgroundVideo>
+    <div class="content-page">
+      <div class="content-container">
+        <div class="content-nav">
+          <el-breadcrumb class="breadcrumb" separator="/">
+            <el-breadcrumb-item>敏感词管理</el-breadcrumb-item>
+          </el-breadcrumb>
+        </div>
+        <div class="content-main">
+          <div class="filter-box">
+            <el-form :inline="true" :model="filterForm">
+              <el-form-item label="敏感词">
+                <el-input v-model="filterForm.word" placeholder="请输入敏感词"></el-input>
+              </el-form-item>
+              <el-form-item>
+                <el-button type="primary" @click="onSubmitFilter">查询</el-button>
+                <el-button type="primary" @click="handleAddNew">新增敏感词</el-button>
+              </el-form-item>
+            </el-form>
+          </div>
+          <div class="form-table-box el-table-01">
+            <div class="table-scroll-container">
+              <el-table :data="tableData" style="width: 100%" border stripe>
+              <el-table-column prop="id" label="ID" width="60"/>
+              <el-table-column prop="word" label="敏感词" width="150"/>
+              <el-table-column label="创建时间" prop="createTime" :formatter="formatDateColumn" width="550"/>
+              <el-table-column label="操作" width="150" fixed="right">
+                <template slot-scope="scope">
+                  <el-button size="small" @click="handleRowEdit(scope.$index, scope.row)">编辑</el-button>
+                  <el-button size="small" type="danger" @click="handleRowDelete(scope.$index, scope.row)">删除</el-button>
+                </template>
+              </el-table-column>
+              </el-table>
+            </div>
+          </div>
+          <div class="page-box">
+            <el-pagination background @current-change="handlePageChange" :current-page.sync="page" :page-size="10"
+                           layout="total, prev, pager, next, jumper" :total="total"/>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="content-main">
-      <div class="filter-box">
-        <el-form :inline="true" :model="filterForm" class="demo-form-inline">
-          <el-form-item label="敏感词">
-            <el-input v-model="filterForm.word" placeholder="请输入敏感词"></el-input>
-          </el-form-item>
-          <el-form-item>
-            <el-button type="primary" @click="onSubmitFilter">查询</el-button>
-            <el-button type="primary" @click="handleAddNew">新增敏感词</el-button>
-          </el-form-item>
-        </el-form>
-      </div>
-      <div class="form-table-box">
-        <el-table :data="tableData" style="width: 100%" border stripe>
-          <el-table-column prop="id" label="ID" width="60"/>
-          <el-table-column prop="word" label="敏感词" width="150"/>
-          <el-table-column label="创建时间" prop="createTime" :formatter="formatDateColumn"/>
-          <el-table-column label="操作" width="150" fixed="right">
-            <template slot-scope="scope">
-              <el-button size="small" @click="handleRowEdit(scope.$index, scope.row)">编辑</el-button>
-              <el-button size="small" type="danger" @click="handleRowDelete(scope.$index, scope.row)">删除</el-button>
-            </template>
-          </el-table-column>
-        </el-table>
-      </div>
-      <div class="page-box">
-        <el-pagination background @current-change="handlePageChange" :current-page.sync="page" :page-size="10"
-                       layout="total, prev, pager, next, jumper" :total="total"/>
-      </div>
-    </div>
-  </div>
+  </BackgroundVideo>
 </template>
 
 <script>
+import BackgroundVideo from '@/components/BackgroundVideo.vue'
+
 export default {
+  components: {
+    BackgroundVideo,
+  },
   data() {
     return {
       page: 1,

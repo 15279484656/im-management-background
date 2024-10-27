@@ -1,13 +1,15 @@
 <template>
-  <div class="content-page">
-    <div class="content-nav">
+  <BackgroundVideo>
+    <div class="content-page">
+      <div class="content-container">
+        <div class="content-nav">
       <el-breadcrumb class="breadcrumb" separator="/">
         <el-breadcrumb-item>自定义表情管理</el-breadcrumb-item>
       </el-breadcrumb>
     </div>
     <div class="content-main">
       <div class="filter-box">
-        <el-form :inline="true" :model="filterForm" class="demo-form-inline">
+        <el-form :inline="true" :model="filterForm">
           <el-form-item label="用户ID">
             <el-input v-model="filterForm.userId" placeholder="请输入用户ID"></el-input>
           </el-form-item>
@@ -20,7 +22,7 @@
           </el-form-item>
         </el-form>
       </div>
-      <div class="form-table-box">
+      <div class="form-table-box el-table-01">
         <el-table :data="tableData" style="width: 100%" border stripe>
           <el-table-column prop="id" label="ID" width="60"/>
           <el-table-column prop="userId" label="用户ID" width="150"/>
@@ -39,13 +41,19 @@
       <div class="page-box">
         <el-pagination background @current-change="handlePageChange" :current-page.sync="page" :page-size="10"
                        layout="total, prev, pager, next, jumper" :total="total"/>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
+  </BackgroundVideo>
 </template>
 
 <script>
+import BackgroundVideo from '@/components/BackgroundVideo.vue'
 export default {
+  components: {
+    BackgroundVideo,
+  },
   data() {
     return {
       page: 1,

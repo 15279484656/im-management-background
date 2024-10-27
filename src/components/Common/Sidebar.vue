@@ -1,8 +1,5 @@
-<template>
+<template class="el-main666">
   <div class="left-box">
-    <div class="logo">
-      <img src="static/images/loading.gif"/>
-    </div>
     <div class="a" style="overflow-x: hidden; overflow-y: auto; height: 100%">
       <el-menu
           class="sidebar"
@@ -145,7 +142,11 @@
 </template>
 
 <script>
+import BackgroundVideo from '@/components/BackgroundVideo.vue'
 export default {
+  components: {
+    BackgroundVideo,
+  },
   data() {
     return {
       currentPagePath: "/dashboard",
@@ -201,7 +202,7 @@ export default {
   height: 100%;
   float: left;
   flex-direction: column;
-  background: #fff;
+  background: #b2bfc3;
 }
 
 .left-box .sidebar {
@@ -232,6 +233,7 @@ export default {
   background: -o-linear-gradient(138deg, #8731e8 0%, #4528dc 100%);
   background: linear-gradient(-48deg, #8731e8 0%, #4528dc 100%);
   opacity: 0.7;
+  background: #b2bfc3;
 }
 
 .left-box .logo {
@@ -240,11 +242,34 @@ export default {
   align-items: center;
   height: 120px;
   width: 200px;
-  border-right: solid 1px #e6e6e6;
+  border-right: solid 1px #b2bfc3;
+  background: #b2bfc3;
   /*box-shadow: 0 1px 1px rgba(0, 0, 0, .5);*/
 }
 
 .left-box .logo img {
   height: 60px;
+  background: #b2bfc3;
 }
+.left-box .sidebar {
+  width: 200px;
+  flex: 1;
+  border-radius: 0;
+  background: #b2bfc3; /* 将菜单的背景也改为黑色 */
+}
+
+.left-box .el-menu-item,
+.left-box .el-submenu__title {
+  color: #040a26; /* 将菜单文字颜色改为白色 */
+}
+
+.left-box .el-menu-item:hover,
+.left-box .el-submenu__title:hover {
+  background-color: #b2bfc3; /* 鼠标悬浮时的背景颜色 */
+}
+.el-main666 {
+  background-color: #000; /* 将主内容背景颜色改为黑色 */
+  color: #fff; /* 如果需要，也可以调整文字颜色为白色 */
+}
+
 </style>

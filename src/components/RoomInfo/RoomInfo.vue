@@ -1,47 +1,68 @@
 <template>
-  <div class="content-page">
-    <div class="content-nav">
-      <el-breadcrumb class="breadcrumb" separator="/">
-        <el-breadcrumb-item>群组管理</el-breadcrumb-item>
-      </el-breadcrumb>
+  <BackgroundVideo>
+    <div class="content-page">
+      <div class="content-container">
+        <div class="content-nav">
+          <el-breadcrumb class="breadcrumb" separator="/">
+            <el-breadcrumb-item>群组管理</el-breadcrumb-item>
+          </el-breadcrumb>
+        </div>
+        <div class="content-main">
+          <div class="filter-box">
+            <el-form :inline="true" :model="filterForm">
+              <el-form-item label="群组名称">
+                <el-input v-model="filterForm.name" placeholder="群组名称"></el-input>
+              </el-form-item>
+              <el-form-item>
+                <el-button type="primary" @click="onSubmitFilter">查询</el-button>
+                <el-button type="primary" @click="handleAddNew">新增群组</el-button>
+              </el-form-item>
+            </el-form>
+          </div>
+          <div class="form-table-box el-table-01">
+            <div class="table-scroll-container">
+              <el-table :data="tableData" style="width: 100%;margin: auto;" border stripe>
+              <el-table-column prop="id" label="ID" width="60"/>
+              <el-table-column prop="name" label="群组名称" width="200"/>
+              <el-table-column prop="roomNumber" label="群组编号" width="200"/>
+              <el-table-column prop="roomType" label="群组类型" width="150"/>
+              <el-table-column label="创建时间" prop="createTime" :formatter="formatDateColumn" width="150"/>
+              <el-table-column label="操作" width="150" fixed="right">
+                <template slot-scope="scope">
+                  <el-button size="small" @click="handleRowEdit(scope.$index, scope.row)">编辑</el-button>
+                  <el-button size="small" type="danger" @click="handleRowDelete(scope.$index, scope.row)">删除</el-button>
+                </template>
+              </el-table-column>
+              </el-table>
+            </div>
+          </div>
+          <div class="page-box">
+            <el-pagination background @current-change="handlePageChange" :current-page.sync="page" :page-size="10"
+                           layout="total, prev, pager, next, jumper" :total="total"/>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="content-main">
-      <div class="filter-box">
-        <el-form :inline="true" :model="filterForm" class="demo-form-inline">
-          <el-form-item label="群组名称">
-            <el-input v-model="filterForm.name" placeholder="群组名称"></el-input>
-          </el-form-item>
-          <el-form-item>
-            <el-button type="primary" @click="onSubmitFilter">查询</el-button>
-            <el-button type="primary" @click="handleAddNew">新增群组</el-button>
-          </el-form-item>
-        </el-form>
-      </div>
-      <div class="form-table-box">
-        <el-table :data="tableData" style="width: 100%" border stripe>
-          <el-table-column prop="id" label="ID" width="60"/>
-          <el-table-column prop="name" label="群组名称" width="150"/>
-          <el-table-column prop="roomNumber" label="群组编号" width="150"/>
-          <el-table-column prop="roomType" label="群组类型" width="150"/>
-          <el-table-column label="创建时间" prop="createTime" :formatter="formatDateColumn"/>
-          <el-table-column label="操作" width="150" fixed="right">
-            <template slot-scope="scope">
-              <el-button size="small" @click="handleRowEdit(scope.$index, scope.row)">编辑</el-button>
-              <el-button size="small" type="danger" @click="handleRowDelete(scope.$index, scope.row)">删除</el-button>
-            </template>
-          </el-table-column>
-        </el-table>
-      </div>
-      <div class="page-box">
-        <el-pagination background @current-change="handlePageChange" :current-page.sync="page" :page-size="10"
-                       layout="total, prev, pager, next, jumper" :total="total"/>
-      </div>
-    </div>
-  </div>
+  </BackgroundVideo>
 </template>
+<style>
 
+.el-table {
+  /*width: 80%; !* 表格宽度调整为80% *!*/
+  /*max-width: 900px; !* 限制表格的最大宽度 *!*/
+  width: 100%; /* 将表格宽度设为页面容器的100% */
+  max-width: none; /* 移除宽度上限 */
+  font-size: 16px; /* 保持适中的字体大小 */
+  margin: 0 auto; /* 让表格居中显示 */
+}
+</style>
 <script>
+import BackgroundVideo from '@/components/BackgroundVideo.vue'
+
 export default {
+  components: {
+    BackgroundVideo,
+  },
   data() {
     return {
       page: 1,
@@ -119,10 +140,3 @@ export default {
 };
 </script>
 
-<style scoped>
-.table-header {
-  display: flex;
-  justify-content: flex-end;
-  margin-bottom: 20px;
-}
-</style>

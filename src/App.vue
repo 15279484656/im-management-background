@@ -62,11 +62,6 @@ a:hover {
   overflow: hidden;
 }
 
-.page-box {
-  margin-top: 20px;
-  text-align: right;
-}
-
 .form-table-box .el-input__inner {
   max-width: 240px;
 }
@@ -93,5 +88,43 @@ a:hover {
   color: #888;
   font-size: 12px;
   line-height: 30px;
+}
+
+.content-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* 让页面内容居中 */
+}
+
+.content-container {
+  background-color: rgb(21, 21, 21); /* 半透明的背景以确保看见后面的背景框 */
+  /*padding: 20px;*/
+  border-radius: 10px; /* 圆角 */
+  box-shadow: 0 0 10px rgb(26, 182, 196); /* 添加一些阴影让其更立体 */
+}
+
+.form-table-box {
+  display: flex;
+  justify-content: center;
+  size: 200vh;
+  height: 50vh;
+}
+
+.el-table-01 {
+  width: 100%; /* 表格宽度调整为80% */
+  max-width: 900px; /* 限制表格的最大宽度 */
+}
+
+.page-box {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+/* 限制表格容器高度，启用垂直滚动 */
+.table-scroll-container {
+  max-height: 400px; /* 设置表格最大高度，可根据需要调整 */
+  overflow-y: auto;
+  width: 100%;
 }
 </style>

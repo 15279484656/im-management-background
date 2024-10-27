@@ -576,15 +576,16 @@
       <div class="welcome-message">
         欢迎来到战盟及时通讯后台<br>
         一起探索宇宙的奥妙
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
 </template>
 
 <style>
 html,
 body {
   height: 100%;
+  width: 100%;
   margin: 0;
   padding: 0;
 }
@@ -592,14 +593,15 @@ body {
   font-size: 50px; /* 设置字体大小 */
   font-weight: bold; /* 字体加粗 */
   margin-bottom: 10px; /* 底部留空 */
+  margin-top: 10px;
 }
 .login {
   display: flex;
   align-items: center;
   justify-content: center;
   height: 100vh; /* 设置高度为视口高度 */
-  width: 100vw; /* 设置宽度为视口宽度 */
-  background: url("https://gd-hbimg.huaban.com/19fa5356ea7caae2256c4a0ca33d442bcc663dd25b5111-J2Z1ns_fw658webp") no-repeat center center;
+  width: 85vw; /* 设置宽度为视口宽度 */
+  background: url("https://project2024-1304457300.cos.ap-guangzhou.myqcloud.com/taikong.jpg") no-repeat center center;
   background-size: cover; /* 背景图片保持比例覆盖整个页面 */
   font-family: Lato, Helvetica, sans-serif;
   text-align: center;
@@ -614,6 +616,8 @@ body {
   text-align: center; /* 文字居中 */
   color: #f10e0e; /* 字体颜色为白色 */
   left: 10px;
+  background-color: #fff;
+  margin-top: 10px;
 }
 
 .login-box .logo {
@@ -657,3 +661,9 @@ body {
 }
 </style>
 
+<script>
+import BackgroundVideo from "@/components/BackgroundVideo";
+export default {
+  components: {BackgroundVideo}
+}
+</script>

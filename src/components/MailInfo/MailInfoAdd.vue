@@ -1,6 +1,8 @@
 <template>
-  <div class="content-page">
-    <div class="content-nav">
+  <BackgroundVideo>
+    <div class="content-page">
+      <div class="content-container">
+        <div class="content-nav">
       <el-breadcrumb class="breadcrumb" separator="/">
         <el-breadcrumb-item><a @click="$router.push('/dashboard/mailInfo')">站内信列表</a></el-breadcrumb-item>
         <el-breadcrumb-item>{{ isEdit ? '编辑站内信' : '新增站内信' }}</el-breadcrumb-item>
@@ -50,15 +52,21 @@
         </el-form-item>
         <el-form-item>
           <el-button type="primary" @click="onSubmit">{{ isEdit ? '保存修改' : '提交' }}</el-button>
-          <el-button @click="onCancel">取消</el-button>
-        </el-form-item>
-      </el-form>
+              <el-button @click="onCancel">取消</el-button>
+            </el-form-item>
+          </el-form>
+        </div>
+      </div>
     </div>
-  </div>
+  </BackgroundVideo>
 </template>
 
 <script>
+import BackgroundVideo from '@/components/BackgroundVideo.vue'
 export default {
+  components: {
+    BackgroundVideo,
+  },
   data() {
     return {
       form: {

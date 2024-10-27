@@ -1,36 +1,43 @@
 <template>
-  <div class="content-page">
-    <div class="content-nav">
-      <el-breadcrumb class="breadcrumb" separator="/">
-        <el-breadcrumb-item><a @click="$router.push('/dashboard/roomInfo')">群组列表</a></el-breadcrumb-item>
-        <el-breadcrumb-item>{{ isEdit ? '编辑群组' : '新增群组' }}</el-breadcrumb-item>
-      </el-breadcrumb>
+  <BackgroundVideo>
+    <div class="content-page">
+      <div class="content-container">
+        <div class="content-nav">
+          <el-breadcrumb class="breadcrumb" separator="/">
+            <el-breadcrumb-item><a @click="$router.push('/dashboard/roomInfo')">群组列表</a></el-breadcrumb-item>
+            <el-breadcrumb-item>{{ isEdit ? '编辑群组' : '新增群组' }}</el-breadcrumb-item>
+          </el-breadcrumb>
+        </div>
+        <div class="content-main">
+          <el-form :model="form" label-width="120px" class="room-form" :rules="rules" ref="form">
+            <el-form-item label="群组名称" prop="name">
+              <el-input v-model="form.name" placeholder="请输入群组名称"></el-input>
+            </el-form-item>
+            <el-form-item label="群组编号" prop="roomNumber">
+              <el-input v-model="form.room_number" placeholder="请输入群组编号"></el-input>
+            </el-form-item>
+            <el-form-item label="群组类型" prop="roomType">
+              <el-input v-model="form.room_type" placeholder="请输入群组类型"></el-input>
+            </el-form-item>
+            <el-form-item label="头像" prop="picture">
+              <el-input v-model="form.picture" placeholder="请输入头像链接"></el-input>
+            </el-form-item>
+            <el-form-item>
+              <el-button type="primary" @click="onSubmit">{{ isEdit ? '保存修改' : '提交' }}</el-button>
+              <el-button @click="onCancel">取消</el-button>
+            </el-form-item>
+          </el-form>
+        </div>
+      </div>
     </div>
-    <div class="content-main">
-      <el-form :model="form" label-width="120px" class="room-form" :rules="rules" ref="form">
-        <el-form-item label="群组名称" prop="name">
-          <el-input v-model="form.name" placeholder="请输入群组名称"></el-input>
-        </el-form-item>
-        <el-form-item label="群组编号" prop="roomNumber">
-          <el-input v-model="form.room_number" placeholder="请输入群组编号"></el-input>
-        </el-form-item>
-        <el-form-item label="群组类型" prop="roomType">
-          <el-input v-model="form.room_type" placeholder="请输入群组类型"></el-input>
-        </el-form-item>
-        <el-form-item label="头像" prop="picture">
-          <el-input v-model="form.picture" placeholder="请输入头像链接"></el-input>
-        </el-form-item>
-        <el-form-item>
-          <el-button type="primary" @click="onSubmit">{{ isEdit ? '保存修改' : '提交' }}</el-button>
-          <el-button @click="onCancel">取消</el-button>
-        </el-form-item>
-      </el-form>
-    </div>
-  </div>
+  </BackgroundVideo>
 </template>
 
 <script>
+import BackgroundVideo from "@/components/BackgroundVideo";
+
 export default {
+  components: {BackgroundVideo},
   data() {
     return {
       form: {
@@ -42,10 +49,10 @@ export default {
       isEdit: false,
       rules: {
         name: [
-          { required: true, message: '群组名称不能为空', trigger: 'blur' },
+          {required: true, message: '群组名称不能为空', trigger: 'blur'},
         ],
         room_number: [
-          { required: true, message: '群组编号不能为空', trigger: 'blur' },
+          {required: true, message: '群组编号不能为空', trigger: 'blur'},
         ],
       },
     };
@@ -53,7 +60,7 @@ export default {
   methods: {
     fetchRoomData(id) {
       this.axios.get('/imchat/roomInfo/getById', {
-        params: { id }
+        params: {id}
       }).then(response => {
         if (response.data.success) {
           this.form = response.data.result;
@@ -68,7 +75,7 @@ export default {
       this.$refs.form.validate(valid => {
         if (valid) {
           if (this.isEdit) {
-            const { create_time, update_time, ...formDataToSend } = this.form;
+            const {create_time, update_time, ...formDataToSend} = this.form;
             this.axios.put('/imchat/roomInfo', formDataToSend)
                 .then(response => {
                   if (response.data.success) {

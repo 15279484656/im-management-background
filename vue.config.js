@@ -35,7 +35,7 @@ module.exports = {
         proxy: {
             '/imchat': {
                 // target: 'https://meihua150.cn',
-                target: 'https://www.zhanmeng.net',
+                target: 'http://www.zhanmeng.net',
                 changeOrigin: true,
                 pathRewrite: {'^/imchat': ''},
             },
